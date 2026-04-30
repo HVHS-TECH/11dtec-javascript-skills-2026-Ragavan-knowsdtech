@@ -1,31 +1,30 @@
 /****************************
-WHY ARE WE DOING JAV A SCRIPT?
+Maths
 ****************************/
 
-console.log("Running t02_variable.js")
-console.log("hello tech")
+console.log("Running t03_maths.js")
+console.log("Your Bank Account.")
 
 //Varibles
-let pocketmoney = 1000
-console.log(pocketmoney)
-
-var name = "Player 1"
-console.log(name);
-
-var age = 15;
-console.log(age);
-
-var isStudent = true;
-var year = 2026;
-
-console.log("Hi "+ name+"  As of"+year+ " you are"+age+" years old, you have"+pocketmoney+" dollars");
-
+let name = "Ragavan"
+let age = 15;
+let year = 2026;
+let money = 10;
 
 /****************************
 Main code:
 ****************************/
+console.log("hello " +  name )
 
+console.log("You are ", age)
 
+console.log(" The year is", year)
+
+console.log("You have " + money)
+
+console.log("You spend half of your money, now you have " + money/2)
+
+console.log("Then you get $3, now you have $" + money + 3)
 
 /****************************
 Functions:
