@@ -7,7 +7,7 @@ let age = 15;
 let year = 2026;
 let money = 10;
 
-/****************************
+/****************************gbfveqwe
 Main code:
 ****************************/
 console.log("Hello " + name);
