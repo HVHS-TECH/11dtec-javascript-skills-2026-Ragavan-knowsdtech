@@ -27,11 +27,9 @@ OUTPUT.innerHTML +=
   "</h3>";
 
 OUTPUT.innerHTML += '<button onClick="start()">START</button>';
-const OUTPUT = document.getElementById("JavaScriptOutput")
+
 OUTPUT.innerHTML = "Hello World"
-OUTPUT.innerHTML = <form>
-  
-</form>
+
 console.log("Hello " + name);
 console.log("You are " + age);
 console.log("The year is " + year);
