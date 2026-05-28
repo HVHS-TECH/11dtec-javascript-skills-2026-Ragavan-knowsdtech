@@ -9,16 +9,15 @@ const AGE_FIELD = document.getElementById("ageField");
 const MONEY_FIELD = document.getElementById("moneyField");
 const CHOCOLATE_FIELD = document.getElementById("chocolateField");
 const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
+let name = "Ragavan";
+let age = 15;
+let year = 2026;
+let money = 10;
+let chocolatePrice = 20;
 
 /****************************
 Array
 ****************************/
-let chocolateMessages = [
-  "You loathe chocolate",
-  "Chocolate is meh",
-  "Chocolate is pretty good",
-  "Chocolate is the best thing EVER!!!!"
-];
 
 /****************************
 Functions
@@ -27,18 +26,12 @@ function calculateChange(_money, _price) {
   return _money - _price;
 }
 
-function lebron() {
-  let userName = NAME_FIELD.value;
-  let userAge = AGE_FIELD.value;
-  let userMoney = Number(MONEY_FIELD.value);
-  let chocolateLevel = Number(CHOCOLATE_FIELD.value);
-  let chocolatePrice = 4;
 
   OUTPUT.innerHTML = "";
 
-  OUTPUT.innerHTML += "<h3>Hello " + userName + "!</h3>";
-  OUTPUT.innerHTML += "<p>You are " + userAge + " years old.</p>";
-  OUTPUT.innerHTML += "<p>You have $" + userMoney + ".</p>";
+  OUTPUT.innerHTML += "<h3>Hello " + name + "!</h3>";
+  OUTPUT.innerHTML += "<p>You are " + age + " years old.</p>";
+  OUTPUT.innerHTML += "<p>You have $" + money + ".</p>";
   OUTPUT.innerHTML += "<p>A chocolate bar costs $" + chocolatePrice + ".</p>";
 
   if (userMoney >= chocolatePrice) {
@@ -51,10 +44,17 @@ function lebron() {
   }
 
   OUTPUT.innerHTML += "<p>" + chocolateMessages[chocolateLevel] + "</p>";
-}
 
-let classArray = ["Milk", "eggs", "Bananas"]
-OUTPUT.innerHTML = "The third item is" + classArray[3];
+
+let classArray = [ "Milk", "Eggs", "Bananas"]
+OUTPUT.innerHTML = "The third item is      " + classArray[3];
 OUTPUT.innerHTML = "there are " + classArray.length + " items in the shop"
 
 for(let i=0; i<classArray.length; i++){ OUTPUT.innerHTML += "item " + i + ": " +classArray[i]+"<br>"};
+/****Adding MIlo button**************/
+classArray.push("Milo")
+
+/*Remove product***/
+classArray.splice(3,1);
+
+lebron();

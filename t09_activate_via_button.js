@@ -26,7 +26,8 @@ OUTPUT.innerHTML +=
   " Then you get $3, now you have $" + ((money / 2) + 3) +
   "</h3>";
 
-OUTPUT.innerHTML += '<button onClick="start()">START</button>';
+/***** */
+ // OUTPUT.innerHTML += '<button onClick="start()">START</button>';
 
 console.log("Hello " + name);
 console.log("You are " + age);
