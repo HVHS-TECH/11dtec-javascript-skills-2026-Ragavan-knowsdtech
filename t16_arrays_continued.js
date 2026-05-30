@@ -41,6 +41,6 @@ function displayList() {
 
   // Loop through the array and print each item on a new line
   for (let i = 0; i < shoppingList.length; i++) {
-    OUTPUT.innerHTML += shoppingList[i] + "<br>";
+    OUTPUT.innerHTML += "- " + shoppingList[i] + "<br>";
   }
 }
