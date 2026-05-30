@@ -1,60 +1,46 @@
 console.log("t16_arrays_continued.js");
-console.log("Arrays");
+console.log("Task 16 - Arrays 2: Shopping List");
 
 /****************************
 Variables
 ****************************/
-const NAME_FIELD = document.getElementById("nameField");
-const AGE_FIELD = document.getElementById("ageField");
-const MONEY_FIELD = document.getElementById("moneyField");
-const CHOCOLATE_FIELD = document.getElementById("chocolateField");
+const ITEM_FIELD = document.getElementById("itemField");
 const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
-let name = "Ragavan";
-let age = 15;
-let year = 2026;
-let money = 10;
-let chocolatePrice = 20;
 
 /****************************
 Array
 ****************************/
+let shoppingList = []; 
 
 /****************************
 Functions
 ****************************/
-function calculateChange(_money, _price) {
-  return _money - _price;
+
+function addItem() {
+  let newItem = ITEM_FIELD.value;
+
+  // Make sure the input isn't empty
+  if (newItem !== "") {
+    // Add the item to the end of the array
+    shoppingList.push(newItem);
+
+    // Display the confirmation message
+    OUTPUT.innerHTML = "You have added " + newItem + " to the list";
+
+    // Clear the input field for the next item
+    ITEM_FIELD.value = ""; 
+  }
 }
 
-
+function displayList() {
+  // Clear the output area first
   OUTPUT.innerHTML = "";
 
-  OUTPUT.innerHTML += "<h3>Hello " + name + "!</h3>";
-  OUTPUT.innerHTML += "<p>You are " + age + " years old.</p>";
-  OUTPUT.innerHTML += "<p>You have $" + money + ".</p>";
-  OUTPUT.innerHTML += "<p>A chocolate bar costs $" + chocolatePrice + ".</p>";
+  // Display the main message
+  OUTPUT.innerHTML += "These are the items on your shopping list:<br>";
 
-  if (userMoney >= chocolatePrice) {
-    let change = calculateChange(userMoney, chocolatePrice);
-
-    OUTPUT.innerHTML += "<p>You CAN afford a chocolate bar.</p>";
-    OUTPUT.innerHTML += "<p>You will get $" + change + " change.</p>";
-  } else {
-    OUTPUT.innerHTML += "<p>Sorry, you CAN'T afford a chocolate bar.</p>";
+  // Loop through the array and print each item on a new line
+  for (let i = 0; i < shoppingList.length; i++) {
+    OUTPUT.innerHTML += shoppingList[i] + "<br>";
   }
-
-  OUTPUT.innerHTML += "<p>" + chocolateMessages[chocolateLevel] + "</p>";
-
-
-let classArray = [ "Milk", "Eggs", "Bananas"]
-OUTPUT.innerHTML = "The third item is      " + classArray[3];
-OUTPUT.innerHTML = "there are " + classArray.length + " items in the shop"
-
-for(let i=0; i<classArray.length; i++){ OUTPUT.innerHTML += "item " + i + ": " +classArray[i]+"<br>"};
-/****Adding MIlo button**************/
-classArray.push("Milo")
-
-/*Remove product***/
-classArray.splice(3,1);
-
-lebron();
+}
