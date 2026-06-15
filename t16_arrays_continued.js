@@ -1,5 +1,5 @@
-console.log("t16_arrays_continued.js");
-console.log("Arrays");
+// Header comments
+console.log("t16_arrays_continued.js is loaded and running!");
 
 let glassCount = 0;
 let standardCount = 0;
