@@ -1,60 +1,69 @@
 console.log("t16_arrays_continued.js");
 console.log("Arrays");
 
-/****************************
-Variables
-****************************/
-const NAME_FIELD = document.getElementById("nameField");
-const AGE_FIELD = document.getElementById("ageField");
-const MONEY_FIELD = document.getElementById("moneyField");
-const CHOCOLATE_FIELD = document.getElementById("chocolateField");
-const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
-let name = "Ragavan";
-let age = 15;
-let year = 2026;
-let money = 10;
-let chocolatePrice = 20;
+let glassCount = 0;
+let standardCount = 0;
+let chocolateCount = 0;
 
-/****************************
-Array
-****************************/
+const GLASS_PRICE = 3.99;
+const STANDARD_PRICE = 5.99;
+const CHOCOLATE_PRICE = 6.99;
 
-/****************************
-Functions
-****************************/
-function calculateChange(_money, _price) {
-  return _money - _price;
+let userNameField = document.getElementById("nameField");
+
+
+
+function addItem() {
+
+    let milkType = document.getElementById("milkType").value;
+    let quantity = Number(document.getElementById("quantity").value);
+
+    if (milkType === "glass") {
+        glassCount += quantity;
+    }
+    else if (milkType === "standard") {
+        standardCount += quantity;
+    }
+    else {
+        chocolateCount += quantity;
+    }
+
+    document.getElementById("orderList").innerHTML =
+        "Glass Bottle Milk: " + glassCount + "<br>" +
+        "Standard Milk: " + standardCount + "<br>" +
+        "Chocolate Milk: " + chocolateCount;
 }
 
+function checkout() {
 
-  OUTPUT.innerHTML = "";
+    let money = Number(document.getElementById("money").value);
 
-  OUTPUT.innerHTML += "<h3>Hello " + name + "!</h3>";
-  OUTPUT.innerHTML += "<p>You are " + age + " years old.</p>";
-  OUTPUT.innerHTML += "<p>You have $" + money + ".</p>";
-  OUTPUT.innerHTML += "<p>A chocolate bar costs $" + chocolatePrice + ".</p>";
+    let total =
+        (glassCount * GLASS_PRICE) +
+        (standardCount * STANDARD_PRICE) +
+        (chocolateCount * CHOCOLATE_PRICE);
 
-  if (userMoney >= chocolatePrice) {
-    let change = calculateChange(userMoney, chocolatePrice);
+    if (money >= total) {
 
-    OUTPUT.innerHTML += "<p>You CAN afford a chocolate bar.</p>";
-    OUTPUT.innerHTML += "<p>You will get $" + change + " change.</p>";
-  } else {
-    OUTPUT.innerHTML += "<p>Sorry, you CAN'T afford a chocolate bar.</p>";
-  }
+        let change = money - total;
 
-  OUTPUT.innerHTML += "<p>" + chocolateMessages[chocolateLevel] + "</p>";
+        document.getElementById("output").innerHTML =
+            "Order Successful!<br><br>" +
+            "Glass Bottle Milk: " + glassCount + "<br>" +
+            "Standard Milk: " + standardCount + "<br>" +
+            "Chocolate Milk: " + chocolateCount + "<br><br>" +
+            "Total Cost: $" + total.toFixed(2) + "<br>" +
+            "Money Given: $" + money.toFixed(2) + "<br>" +
+            "Change: $" + change.toFixed(2);
 
+    }
+    else {
 
-let classArray = [ "Milk", "Eggs", "Bananas"]
-OUTPUT.innerHTML = "The third item is      " + classArray[3];
-OUTPUT.innerHTML = "there are " + classArray.length + " items in the shop"
+        let needed = total - money;
 
-for(let i=0; i<classArray.length; i++){ OUTPUT.innerHTML += "item " + i + ": " +classArray[i]+"<br>"};
-/****Adding MIlo button**************/
-classArray.push("Milo")
+        document.getElementById("output").innerHTML =
+            "Not enough money!<br>" +
+            "You need $" + needed.toFixed(2) + " more.";
 
-/*Remove product***/
-classArray.splice(3,1);
-
-lebron();
+    }
+}
