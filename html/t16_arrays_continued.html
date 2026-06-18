@@ -1,35 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>T16 - Shopping List</title>
-  <meta charset="UTF-8">
+    <title>Shopping List</title>
 </head>
+
 <body>
-  <h1>T16-arrays continued</h1>
-  <p>Open the console <code>(Ctrl-shift-i)</code> to see the messages.</p>
-  <button onClick="lebron()">Add Milo</button>
-  <button onClick="start()">Remove Milo</button>
-  <button onClick="start()">Open Shopping List</button>
-  <form onsubmit="lebron(); return false;">
-    <label for="nameField">Name:</label>
-    <input type="text" id="nameField" name="formName">
-    <input type="submit" value="Submit">
-    
-    <p>Age:</p>
-  <input id="ageField" type="number">
-  <p>Money:</p>
-  <input id="moneyField" type="number">
-  </form>
-  <p><br><br><i>Copy your HTML from the last task and keep building.</i><br><br><br><br></p>
 
-  <div id="spaceForJavaScriptOutput">
+    <h1>Shopping List</h1>
 
-    The output of your script will go here.
+    <input id="itemInput" type="text" placeholder="Enter shopping item">
 
-  </div>
+    <button onclick="addItem()">Add Item</button>
+
+    <button onclick="displayList()">Show Shopping List</button>
 
 
-  <script src="../t16_arrays_continued.js"></script>
+    <p id="confirmation"></p>
+
+    <ul id="list"></ul>
+
+ <script src="../t16_arrays_continued.js"></script>
 
 </body>
 
